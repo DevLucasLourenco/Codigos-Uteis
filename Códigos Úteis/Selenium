@@ -17,4 +17,4 @@ servico = Service(ChromeDriverManager().install())
 drive = webdriver.Chrome(service=servico)
 drive.maximize_window()
 
-marktime = WebDriverWait(drive, 30)
+marktime = WebDriverWait(drive, 100)
