@@ -13,8 +13,16 @@ from selenium.common.exceptions import (
     NoSuchElementException)
 
 
+options = webdriver.ChromeOptions()
+options.add_experimental_option('prefs', {
+    'download.default_directory': r'C:\Users\lucas\Downloads',
+    'download.prompt_for_download': False,
+    'download.directory_upgrade': True,
+    'safebrowsing.enabled': True
+})
+
 
 servico = Service(ChromeDriverManager().install())
-drive = webdriver.Chrome(service=servico)
+drive = webdriver.Chrome(service=servico, options=options)
 drive.maximize_window()
 marktime = WebDriverWait(drive, 90)
