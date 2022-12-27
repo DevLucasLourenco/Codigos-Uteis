@@ -26,3 +26,11 @@ servico = Service(ChromeDriverManager().install())
 drive = webdriver.Chrome(service=servico, options=options)
 drive.maximize_window()
 marktime = WebDriverWait(drive, 90)
+
+
+###########################
+#Caso queria abrir o navegador sem fazer com que ele apareça, ou seja, no modo "headless", fazer assim:
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+drive = webdriver.Chrome(service=servico, options=options)
