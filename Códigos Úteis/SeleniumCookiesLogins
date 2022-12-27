@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_argument('user-data-dir=C://users/lucas/Profile Selenium') 
+# pesquisar por chrome://version ou edge://version e pegar o diretório de onde está armazenado
+# o Profile Selenium ira criar um novo profile para poder armazenar na memória. Neste profile, você deve 
+# fazer login em todas as suas contas que for usar como o whatsapp, gmail e etc.
+# armazenará nos históricos de navegação
+
+
+servico = Service(ChromeDriverManager().install())
+navegador = webdriver.Chrome(service=servico, options=options)
+
+navegador.get("https://web.whatsapp.com")
