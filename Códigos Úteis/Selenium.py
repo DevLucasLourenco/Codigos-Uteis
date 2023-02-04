@@ -34,3 +34,20 @@ marktime = WebDriverWait(drive, 90)
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 drive = webdriver.Chrome(service=servico, options=options)
+
+
+
+
+# abrir em fullscrean e não ser possível de tirar
+
+options = webdriver.ChromeOptions()
+options.add_argument("--kiosk")
+
+
+
+
+##abrir sem a informação falando que é um sistema operado por um software
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("useAutomationExtension", False)
+options.add_experimental_option("excludeSwitches",["enable-automation"])
